@@ -39,6 +39,7 @@ export default function TabLayout() {
         },
       }}
     >
+      {/* Perfil Tab */}
       <Tabs.Screen
         name="perfil"
         options={{
@@ -55,6 +56,7 @@ export default function TabLayout() {
         }}
       />
 
+      {/* Home Tab */}
       <Tabs.Screen
         name="index"
         options={{
@@ -71,6 +73,7 @@ export default function TabLayout() {
         }}
       />
 
+      {/* About Tab */}
       <Tabs.Screen
         name="about"
         options={{
@@ -84,6 +87,20 @@ export default function TabLayout() {
               />
             </View>
           ),
+          tabBarStyle: {
+            backgroundColor: "#f8f8f8",
+            height: 65,
+            borderTopWidth: 1,
+            borderTopColor: "#ddd",
+            paddingBottom: Platform.OS === "ios" ? 25 : 10,
+          },
+          tabBarActiveTintColor: "#000",
+          tabBarInactiveTintColor: "#666",
+          tabBarLabelStyle: {
+            fontSize: 12,
+            fontWeight: "600",
+          },
+          headerShown: false,
         }}
       />
     </Tabs>

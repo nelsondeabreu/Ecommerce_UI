@@ -1,3 +1,4 @@
+
 import { Handbag } from "lucide-react-native";
 import { View } from "react-native";
 import { Styles } from "./styles";
