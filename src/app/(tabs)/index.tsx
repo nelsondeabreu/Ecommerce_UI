@@ -44,7 +44,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: "#f5f5f5" }}>
       <ScrollView>
         <SafeAreaView style={{ flex: 1, padding: 20 }}>
           <Header />
