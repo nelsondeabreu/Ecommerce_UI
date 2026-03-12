@@ -1,11 +1,11 @@
 import { CategoryCircles } from "@/components/categoryCircles";
+import { FilterDropdown } from "@/components/filterDropDownMenu";
 import { Header } from "@/components/Header/header";
 import { SearchInput } from "@/components/Input/search";
 import { ProductCard } from "@/components/ProductCard/productCard";
 import { useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FilterDropdown } from '../../components/filterDropDownMenu';
 
 const sortOptions = [
   { label: "Sort By", value: " " },

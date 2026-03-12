@@ -1,8 +1,13 @@
-import { Tabs } from "expo-router";
+import { useAuth } from "@/hooks/useAuth";
+import { Redirect, Tabs } from "expo-router";
 import { Home, LayoutGrid, UserRound } from "lucide-react-native";
 import { Platform, View } from "react-native";
 
 export default function TabLayout() {
+  const { isAuthenticated } = useAuth();
+  if (!isAuthenticated) {
+    return <Redirect href="/get-started" />;
+  }
   return (
     <Tabs
       screenOptions={{
@@ -39,7 +44,6 @@ export default function TabLayout() {
         },
       }}
     >
-      {/* Perfil Tab */}
       <Tabs.Screen
         name="perfil"
         options={{
@@ -56,7 +60,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Home Tab */}
       <Tabs.Screen
         name="index"
         options={{
@@ -73,7 +76,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* About Tab */}
       <Tabs.Screen
         name="about"
         options={{
@@ -87,20 +89,6 @@ export default function TabLayout() {
               />
             </View>
           ),
-          tabBarStyle: {
-            backgroundColor: "#f8f8f8",
-            height: 65,
-            borderTopWidth: 1,
-            borderTopColor: "#ddd",
-            paddingBottom: Platform.OS === "ios" ? 25 : 10,
-          },
-          tabBarActiveTintColor: "#000",
-          tabBarInactiveTintColor: "#666",
-          tabBarLabelStyle: {
-            fontSize: 12,
-            fontWeight: "600",
-          },
-          headerShown: false,
         }}
       />
     </Tabs>
